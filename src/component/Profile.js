@@ -3,8 +3,8 @@ import axios from 'axios';
 
 class Profile extends Component {
     state = {
-        artistname: null,
-        songname: null,
+        firstname: null,
+        lastname: null,
         email: null
     }
     
@@ -19,14 +19,14 @@ class Profile extends Component {
     setArtisttName = e =>{
         //console.log(e.target.value)
         this.setState({
-            artistname: e.target.value
+            firstname: e.target.value
         })
     }
-    this.setSongName = e =>{
-        this.setState({
-            songname: e.target.value
-        })
-    }
+    // this.setSongName = e =>{
+    //     this.setState({
+    //         songname:e.target.value
+    //     })
+    // }
     
     render(){
         return(
