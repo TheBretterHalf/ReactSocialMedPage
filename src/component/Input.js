@@ -6,17 +6,17 @@ class Input extends Component{
         songname: null,
         lyrics: null
     }
-    setArtist = e =>{
+    setArtist = name =>{
         this.setState({
             artistname: this.state.artistname
         })
     }
-    setsongname = e =>{
+    setsongname = name =>{
         this.setState({
             songname: this.state.songname
         })
     }
-    handleClick=(e)=>{
+    handleClick=()=>{
         axios("https://api.lyrics.ovh/v1/"+ this.state.artistname + "/" + this.state.songname)
         .then(response=>{
             console.log(response.data)
