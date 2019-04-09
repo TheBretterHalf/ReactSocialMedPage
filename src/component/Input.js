@@ -16,14 +16,21 @@ class Input extends Component{
             songname: this.state.songname
         })
     }
-    handleClick=()=>{
-        console.log(this.state.firstname)
-        axios.get("https://api.lyrics.ovh/v1/"+ this.state.artistname + "/" + this.state.songname)
+    handleClick=(e)=>{
+        axios("https://api.lyrics.ovh/v1/"+ this.state.artistname + "/" + this.state.songname)
         .then(response=>{
             console.log(response.data)
-             response.data.lyrics
+            this.setstaet({
+                lyrics: response.data.lyrics
+            })
+            this.props.setLyricsText(this.state.lyrics)
         })
+            this.props.setArtistName(this.state.artistname);
+            this.props.setSongName(this.state.songname);
+            
     }
+    
+
     render(){
         return(
             <div>

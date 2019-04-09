@@ -1,11 +1,35 @@
 import React, { Component } from 'react';
 import Input from "./component/Input"
+import Display from "./component/Display"
 
 class App extends Component {
+  state = {
+    artistname: null,
+    songname: null,
+    lyrics: null
+  }
+  
+  setArtist = name => {
+    this.setState({
+      artistname:name
+    })
+  }
+  setSong = name =>{
+    this.setState({
+      songname: name
+    })
+  }
+  setLyrics = name =>{
+    this.setState({
+      lyrics: name
+    })
+  }
   render() {
     return (
-      <div className="App">
-        <Input />
+      <div className="App" style={{"textAlign":"center", "margin":"auto", "width":"90%"}}>
+      <h2>Search For A Song</h2>
+        <Input setArtistName = {this.setArtist} setSongName={this.setSong} setLyricsText={this.setLyrics}/>
+        <Display artist={this.state.artistname} song={this.state.songname} lyrics={this.state.lyrics} />
       </div>
     );
   }
