@@ -20,7 +20,7 @@ class Input extends Component{
         axios("https://api.lyrics.ovh/v1/"+ this.state.artistname + "/" + this.state.songname)
         .then(response=>{
             console.log(response.data)
-            this.setstaet({
+            this.setstate({
                 lyrics: response.data.lyrics
             })
             this.props.setLyricsText(this.state.lyrics)
