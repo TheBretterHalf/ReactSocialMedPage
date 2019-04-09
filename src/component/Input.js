@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from "react"
 import axios from 'axios';
-
-class Profile extends Component {
-    state = {
+class Input extends Component{
+        state = {
         artistname: null,
         songname: null,
         lyrics: null
@@ -25,23 +24,15 @@ class Profile extends Component {
              response.data.lyrics
         })
     }
-    
-    // this.setSongName = e =>{
-    //     this.setState({
-    //         songname:e.target.value
-    //     })
-    // }
-    
     render(){
         return(
             <div>
-            <p>My App</p>
-            <input onChange={this.setArtist} placeholder="Artist Name" />
-            <input onChange={this.setsongname} placeholder="Song Name"/>
-            <button onClick={this.handleClick}>Submit</button>
+                <input onChange={this.setArtist} placeholder="Artist Name" />
+                <input onChange={this.setsongname} placeholder="Song Name"/>
+                <button onClick={this.handleClick}>Submit</button>
             </div>
             )
     }
 }
 
-export default Profile;
+export default Input;

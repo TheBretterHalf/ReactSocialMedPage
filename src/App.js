@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Profile from "./component/Profile"
+import Input from "./component/Input"
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Profile />
+        <Input />
       </div>
     );
   }
